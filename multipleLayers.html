@@ -47,8 +47,12 @@
 		// change the map zoom so that all the data is shown
 		mymap.fitBounds(earthquakelayer.getBounds());
 		}
+		// make sure that there is a variable for the earthquake layer to be referenced by
+		// this should be GLOBAL – i.e. not inside a function – so that any code can see the variable
+		var earthquakelayer;
 		function removeEarthquakeData() {
-		alert("remove the earthquake data here");
+		alert("Earthquake data will be removed");
+		mymap.removeLayer( earthquakelayer );
 		}
 	</script>
 </head>
@@ -60,7 +64,7 @@
 	<button id="loadData" name="loadData" onclick="loadEarthquakeData()">Click here to load the data </button>
 
 	<button id="removeEarthquakeData" name="removeEarthquakeData" onclick="removeEarthquakeData()">Click here to remove the Earthquake data </button>
-	
+
 	<!-- the following script will load the map and set the default view and zoom, as well as loading the basemap tiles -->
 
 	<script>
