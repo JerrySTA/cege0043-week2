@@ -13,17 +13,16 @@
 	</style>
 
 	<script >
-		// create a variable that will hold the XMLHttpRequest() - this must be done outside a function so
-		that all the functions can use the same variable
+		// create a variable that will hold the XMLHttpRequest() - this must be done outside a function so that all the functions can use the same variable
 		var client;
-		// and a variable that will hold the layer itself – we need to do this outside the function so that we
-		can use it to remove the layer later on
+		// and a variable that will hold the layer itself – we need to do this outside the function so that we can use it to remove the layer later on
 		var earthquakelayer;
 		// create the code to get the Earthquakes data using an XMLHttpRequest
 		function getEarthquakes() {
 		client = new XMLHttpRequest();
 		client.open('GET','https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson');
-		client.onreadystatechange = earthquakeResponse; // note don't use earthquakeResponse() with brackets as that doesn't work
+		client.onreadystatechange = earthquakeResponse; 
+		// note don't use earthquakeResponse() with brackets as that doesn't work
 		client.send();
 		}
 		// create the code to wait for the response from the data server, and process the response once it is received
